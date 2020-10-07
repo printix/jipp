@@ -5,3 +5,38 @@ local.properties
 out
 gradle.properties
 /debug
+## This file is maintained in https://printix.atlassian.net/browse/PP-5666
+
+### General ignores for maven projects
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### Eclipse Ignores
+.classpath
+.springBeans
+.project
+.settings/
+.factorypath
+.apt_generated/
+lib/
+.sts4-cache/
+
+### IDEA ignores
+.idea/
+*.iws
+*.ipr
+
+### NetBeans
+nbactions.xml
+nb-configuration.xml
+nbproject/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+### Local spring config
+**/src/main/resources/application-local.yml
+
+## test crud
+.toDelete
+

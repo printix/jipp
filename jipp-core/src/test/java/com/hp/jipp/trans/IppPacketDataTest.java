@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -17,8 +18,8 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class IppPacketDataTest {
-    @Mock
-    InputStream input;
+//    @Mock
+    InputStream input = new ByteArrayInputStream(new byte[]{});
 
     @Test
     public void cover() {
@@ -31,13 +32,7 @@ public class IppPacketDataTest {
                         new IppPacket(Status.successfulOk, 0x124, groupOf(Tag.operationAttributes)), null));
     }
 
-    @Test
-    public void close() throws IOException {
-        IppPacket packet1 = new IppPacket(Status.successfulOk, 0x123, groupOf(Tag.operationAttributes));
-        IppPacketData data = new IppPacketData(packet1, input);
-        data.close();
-        verify(input).close();
-    }
+
 
     @Test
     public void emptyClose() throws IOException {

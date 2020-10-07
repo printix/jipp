@@ -28,7 +28,7 @@ class PwgWriterTest {
     @Test
     fun validateGeneratedPwg() {
         val name = "validateGeneratedPwg"
-        val outPwg = File("build/$name.pwg")
+        val outPwg = File("target/$name.pwg")
         // Create and load a sample PDF
         val doc = RandomDocument(123L, 2, 72.0, 72.0, 300)
 
